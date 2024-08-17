@@ -1,0 +1,712 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+:root {
+  --clr-l1-bg: #fafafa;
+  --clr-l2-tOrg-bg: #fafbfb;
+  --clr-text-dark: #000;
+  --clr-text-grey: #b8b8b8;
+  --clr-shade-grey1: #ECECEC;
+  --clr-shade-grey2:#F0F0F0;
+  --clr-search-bg: #f5f5f5;
+  --clr-pane-sh1: #f0f7fa;
+  --clr-pane-sh2: #eff3fb;
+  --clr-pane-sh3: #f1effb;
+  
+  --clr-objective-blue:#F1FCFF;
+  --clr-accent:#003840;
+
+  --fs-cardTitle: 1.5rem;
+  --fs-paneTitle: 1rem;
+  --fs-cardBody: 0.85rem;
+  --fs-xs:0.7rem;
+  --fs-button: 1rem;
+
+  --ff-poppins: "Poppins", sans-serif;
+  --ff-roboto: "Roboto", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* -----------------Common Items------------ */
+a{
+  text-decoration: none;
+}
+.red{
+  color: white;
+  background-color: red;
+}
+.yellow{
+  color: brown;
+  background-color: yellow;
+}
+.lightGrey{
+  color: darkgray;
+  background-color: lightgray;
+}
+.transparent{
+  color: black;
+}
+.green{
+  color: white;
+  background-color: rgb(17, 114, 17);
+}
+.iconButton{
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--clr-text-dark);
+  color: var(--clr-l1-bg);
+}
+.iconButton:hover{
+background-color: var(--clr-accent);
+
+}
+.loadingWiText{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  /* justify-content: center; */
+}
+/* -------------------Login page------------ */
+.page{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* flex-direction: column; */
+  background-color: var(--clr-shade-grey2);
+  gap: 24px;
+}
+.loginHalf1{
+  display: flex;
+  width: 40%;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  height: 100vh;
+  justify-content: center;
+}
+.loginHalf2{
+  width: 60%;
+}
+.loginForm{
+  width: 250px;
+}
+.loginTitle{
+  font-family: var(--ff-roboto);
+}
+.loginInput{
+  width: 100%;
+  height: 40px;
+  outline: none;
+  border: none;
+  padding: 8px;
+  font-family: var(--ff-roboto);
+  margin-bottom: 8px;
+  cursor: pointer; 
+  background-color: white;
+}
+/* -----------------Top Header-------------- */
+.topHeader {
+  height: 60px;
+  border-bottom: 1px var(--clr-pane-sh1) solid;
+  padding: 14px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.profileIcon {
+  background-color: orange;
+  height: 32px;
+  width: 32px;
+  border-radius: 16px;
+  color: white;
+  font-family: var(--ff-poppins);
+  align-items: center;
+  display: flex;
+  font-size: var(--fs-cardBody);
+  justify-content: center;
+  cursor: pointer;
+}
+.profileOptions{
+  position: absolute;
+  right: 32px;
+  width: 150px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  z-index: 3;
+}
+/* -----------------SearchBar--------------- */
+.searchBar {
+  display: flex;
+  padding: 8px 16px 8px 0;
+  justify-content: space-between;
+  width: 400px;
+  height: 40px;
+  background-color: var(--clr-search-bg);
+  align-items: center;
+  border-radius: 8px;
+}
+.searchBar input {
+  background-color: transparent;
+  border: none;
+  padding-left: 16px;
+  outline: none;
+}
+/* -----------------Box Card---------------- */
+.boxCollection {
+  display: flex;
+  gap: 8px;
+}
+
+.boxCard {
+  height: 100px;
+  width: 290px;
+  background-color: var(--clr-l1-bg);
+  border-radius: 8px;
+  padding: 8px 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.boxName {
+  font-family: var(--ff-poppins);
+  color: var(--clr-text-dark);
+  font-size: var(--fs-cardTitle);
+  font-weight: 500;
+}
+
+.boxCategory,
+.boxID {
+  font-family: var(--ff-roboto);
+  font-size: var(--fs-cardBody);
+  color: var(--clr-text-grey);
+  letter-spacing: 1px;
+}
+/* ------------Box collection---------------- */
+.boxContainer{
+  padding: 32px;
+  display: flex;
+  gap: 24px;
+  flex-direction: column;
+}
+/* ------------Button with Icon-------------- */
+.buttonWIContainer {
+  padding: 12px 24px;
+  display: flex;
+  gap: 8px;
+  font-family: var(--ff-poppins);
+  font-size: var(--fs-button);
+  background-color: var(--clr-search-bg);
+  color: var(--clr-text-dark);
+  align-items: center;
+  height: 40px;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  background-color: var(--clr-text-dark);
+  color: var(--clr-l1-bg);
+}
+/* ------------Box Navigator----------------- */
+.boxNavigatorContainer {
+  display: flex;
+  font-family: var(--ff-roboto);
+  align-items: center;
+  justify-content: space-between;
+  width: 200px;
+  background-color: var(--clr-l1-bg);
+  padding: 4px 8px;
+  border-radius: 8px;
+}
+.bxIcon {
+  height: 40px;
+  width: 40px;
+  background-color: var(--clr-search-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.bxContent h4 {
+  color: var(--clr-text-dark);
+  font-weight: 500;
+  font-size: var(--fs-cardBody);
+}
+
+.bxContent p {
+  font-size: var(--fs-cardBody);
+  color: var(--clr-text-grey);
+  font-family: var(--ff-roboto);
+}
+.bxArrow {
+  font-size: 18px;
+}
+/* ------------Box details page-------------- */
+.controlsBar {
+  height: 56px;
+  border-bottom: 1px solid var(--clr-pane-sh1);
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 16px;
+}
+.controlsBarRight {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* ----------------taskOrganasing Container--------------- */
+.taskOrgContainer {
+  width: 100%;
+  height: 800px;
+  overflow-x: auto;
+  background-color: var(--clr-l2-tOrg-bg);
+  display: flex;
+  gap: 16px;
+  padding: 24px 0 0 24px;
+}
+
+.pane {
+  height: 700px;
+  width: 320px;
+  border-radius: 8px;
+  padding: 16px;
+}
+.paneTitle {
+  font-family: var(--ff-roboto);
+  font-size: var(--fs-paneTitle);
+  margin-bottom: 12px;
+}
+.blue {
+  background-color: var(--clr-pane-sh1);
+}
+.purple {
+  background-color: var(--clr-pane-sh2);
+}
+
+.purpleDark {
+  background-color: var(--clr-pane-sh3);
+}
+
+/*--------------- task and subtask cards--------------------- */
+
+.taskCard {
+  background: linear-gradient(white, white) padding-box,
+    linear-gradient(to right,#F0DD8E,#F6B425) border-box;
+  border-radius: 8px;
+  border: 2px solid transparent;
+}
+.subtaskCard,
+.taskCard {
+  width: 100%;
+  height: 90px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  margin-bottom: 8px;
+  position: relative; 
+  overflow: hidden; 
+  cursor: pointer;
+}
+
+.topCard{
+  height: 66%;
+  border-bottom: 1px solid var(--clr-shade-grey1);
+  padding: 16px;
+}
+
+.topCard h5{
+  font-family: var(--ff-roboto);
+  font-size: var(--fs-cardBody);
+}
+.priority, .deadline{
+  height: 20px;
+  width: 20px;
+  border-radius: 16px;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.deadline{
+  border-radius: 4px;
+}
+.bottomCard{
+  padding: 4px 16px;
+  display: flex;
+  justify-content: space-around;
+}
+.deadlineContainer{
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  font-family: var(--ff-roboto);
+  font-size: var(--fs-cardBody);
+  color: var(--clr-text-grey);
+}
+.initialIcon{
+  background-color: orange;
+  height: 24px;
+  width: 24px;
+  border-radius: 16px;
+  color: white;
+  font-family: var(--ff-poppins);
+  align-items: center;
+  display: flex;
+  font-size: var(--fs-xs);
+  justify-content: center;
+}
+
+/* ---------------------Side bar----------------- */
+
+.sidebar{
+  background-color: var(--clr-l1-bg);
+  height: calc(100vh - 60px);
+  box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+  width: min(40%, 600px);
+  position: absolute;
+  right: 0;
+  top: 60px;
+  padding: 24px 32px;
+  overflow: hidden;
+  
+ 
+}
+.close{
+  display: none;
+}
+.sidebarTopSection{
+  /* background-color: red; */
+  display: flex;
+  justify-content: flex-end;
+  font-size: 32px;
+  cursor: pointer;
+  
+}
+.sidebarTitleSection{
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.taskTitle{
+  font-family: var(--ff-roboto);
+  font-size: var(--fs-cardTitle);
+  font-weight: 500;
+}
+
+.taskID{
+  font-family: var(--ff-roboto);
+  font-size: var(--fs-xs);
+  color: var(--clr-text-grey);
+  
+}
+.sidebarDetailsNavigators{
+  display: flex;
+  font-family: var(--ff-roboto);
+  font-size: var(--fs-cardBody);
+  gap: 24px;
+  color: var(--clr-text-grey);
+  letter-spacing: 1px;
+}
+.sidebarNavigationSection{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+}
+.sidebarEdit{
+  height: 32px;
+  width: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--clr-search-bg);
+  cursor: pointer;
+}
+
+.sbContentNavi{
+  line-height: 32px;
+  cursor: pointer;
+}
+
+.navActive{
+  border-bottom: 2px solid green;
+}
+.sbNavHr{
+  border: none;
+  height: 2px;
+  background-color: var(--clr-shade-grey1);
+  margin-bottom: 32px;
+}
+
+.objbTitle, .reqTitle, .deadlineTitle, .priorityTitle{
+  font-family: var(--ff-roboto);
+  font-size: var(--fs-paneTitle);
+  margin-bottom: 12px;
+}
+
+.objDescription,.reqDescription{
+  font-family: var(--ff-roboto);
+  color: var(--clr-text-grey);
+  font-size: var(--fs-cardBody);
+  line-height: 1.5;
+  margin-bottom: 32px;
+}
+.objective,.request{
+  margin-bottom: 32px;
+}
+.iconSection{
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.otherTaskInfo{
+  display: flex;
+  justify-content: space-around ;
+  padding: 24px 0;
+}
+
+.priorityContent{
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+/* ---------------task Info----------- */
+.statusContainer{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 32px;
+}
+.statChanger{
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  background-color: var(--clr-search-bg);
+  font-family: var(--ff-roboto);
+  cursor: pointer;
+  outline: none;
+}
+
+.statOptions{
+  background-color: var(--clr-search-bg);
+  margin-top: 4px;
+  list-style-type: none;
+  font-family: var(--ff-roboto);
+  font-size: var(--fs-cardBody);
+  margin-bottom: 16px;
+}
+.limitedWidth{
+  width: 200px;
+}
+.statOptions li{
+padding: 8px 16px;
+border-bottom: 1px solid var(--clr-shade-grey1);
+cursor: pointer;
+}
+
+.statOptions li:hover{
+  background-color: var(--clr-text-dark);
+  color: var(--clr-l1-bg);
+}
+.statusTitle{
+  font-size: var(--fs-cardBody);
+  font-family: var(--ff-roboto);
+  color: var(--clr-text-grey);
+  margin-bottom: 8px;
+}
+.aprovalStatus h5, .taskStatus h5{
+font-family: var(--ff-roboto);
+}
+
+/* --------------------req modal----------------- */
+.reqModal{
+  width: 100%;
+
+}
+.form{
+  display: flex;
+  flex-direction: column;
+}
+
+.textarea{
+  width: 100%;
+  height: 150px;
+  outline: none;
+  border: none;
+  padding: 16px;
+  font-family: var(--ff-roboto);
+  margin-bottom: 8px;
+}
+
+.submitButton{
+  width: 150px;
+  padding: 8px;
+  font-family: var(--ff-roboto);
+  background-color: var(--clr-text-dark);
+  color: var(--clr-shade-grey1);
+  border: none;
+  border-radius: 4px;
+  margin-bottom: 24px;
+}
+
+/* ---------------Comment section----------- */
+.comment{
+  width: 100%;
+  background-color: var(--clr-pane-sh1);
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-family: var(--ff-roboto);
+  border-bottom: 1px solid var(--clr-shade-grey1);
+}
+.commentDate{
+  font-size: var(--fs-xs);
+  color: var(--clr-text-grey);
+  font-weight: 400;
+}
+.commentDescription{
+  font-size: var(--fs-cardBody)
+}
+.commentSection{
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  gap: 8px;
+  /* position: relative; */
+  height: 450px;
+  overflow: auto;
+  width: 100%;
+}
+.commentForm{
+  position: absolute;
+  right: 0;
+  bottom: 16px;
+  display: flex;
+  gap: 8px;
+  width: 100%;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: center;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  background-color: var(--clr-l1-bg);
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 0px 2px 0px;
+}
+.commentBox{
+  width: 75%;
+  background-color: var(--clr-shade-grey1);
+  border-radius: 8px;
+  padding: 8px;
+}
+.commentBox input{
+  width: 90%;
+  height: 24px;
+  border: none;
+  border-radius: 8px;
+  background-color: var(--clr-shade-grey1);
+  outline: none;
+  padding: 8px 16px;
+}
+/* ---------------create subtask----------------- */
+.createSubtask{
+  margin-bottom: 24px;
+  border: none;
+}
+
+.input{
+  width: 100%;
+  height: 40px;
+  outline: none;
+  border: none;
+  padding: 8px;
+  font-family: var(--ff-roboto);
+  margin-bottom: 8px;
+  cursor: pointer;  
+}
+
+.cancelText{
+  font-family: var(--ff-roboto);
+  cursor: pointer;
+  margin-bottom: 24px;
+}
+.actions{
+  margin-top: 16px;
+  display: flex;
+  gap: 16px;
+  align-items: flex-end;
+}
+
+/* --------------------------subtaskList-------------------- */
+.subtaskTable{
+  width: 100%;
+  font-family: var(--ff-roboto);
+  font-weight: 300;
+  font-size: var(--fs-cardBody);
+  justify-content: space-between;
+}
+
+.oddRow{
+  background-color: var(--clr-shade-grey1);
+  padding: 8px 0;
+  color: var(--clr-text-dark);
+  margin-top: 8px;
+  
+}
+.tableData{
+  padding: 16px 4px;
+}
+
+/* -----------------------create task modal-------------- */
+.createTaskModal{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  background-color: var(--clr-l1-bg);
+  padding: 32px;
+  border-radius: 8px;
+  z-index: 2;
+  width: 500px;
+}
+/* ------------------------search result-------------------- */
+.searchResult{
+  position: absolute;
+  top: 120px;
+  width: 400px;
+  z-index: 3;
+  height: 300px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  background-color: var(--clr-l1-bg);
+  overflow: auto;
+  
+}
+.searchInput{
+  width: 350px;
+}
+
+.searchItem{
+  font-family: var(--ff-roboto);
+  font-size: var(--fs-cardBody);
+  width: 100%;
+  cursor: pointer;
+  padding: 16px;
+  border-bottom: 1px solid var(--clr-shade-grey1);
+}
+
+.searchItem:hover{
+  background-color: var(--clr-text-dark);
+  color: var(--clr-shade-grey1);
+}
+
+
