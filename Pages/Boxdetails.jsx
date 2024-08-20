@@ -157,7 +157,7 @@ const Boxdetails = () => {
       })
       .then((res) => {
         // console.log(res);
-        setCreateTaskLoading(true)
+        setCreateTaskLoading(false)
         setCreateTaskIsOpen(!createTaskIsOpen);
         dispatch(setForceRerender());
         setTaskName("");
@@ -167,7 +167,7 @@ const Boxdetails = () => {
       })
       .catch((err) => {
         console.log(err);
-        setCreateTaskLoading(true)
+        setCreateTaskLoading(false)
       });
     // console.log(payload);
   };
