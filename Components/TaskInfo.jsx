@@ -73,11 +73,11 @@ const TaskInfo = () => {
   useEffect(() => {
     setCurrentStatus(taskDetails.taskStatus);
     setEditPriority(taskDetails.priority);
-  }, [taskDetails.taskStatus]);
+  }, [taskDetails.taskStatus, taskDetails]);
 
   useEffect(() => {
     setCurrentAppStatus(taskDetails.approvalStatus);
-  }, [taskDetails.approvalStatus]);
+  }, [taskDetails.approvalStatus, taskDetails]);
 
   // --------------------------------assignedUser---------------------------
   const assignedUser = allusers.filter(

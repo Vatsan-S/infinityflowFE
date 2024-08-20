@@ -36,10 +36,10 @@ const SubtaskInfo = () => {
   const { taskDetails } = useSelector((state) => state.task);
   useEffect(() => {
     setCurrentStatus(taskDetails.subtaskStatus);
-  }, [taskDetails.subtaskStatus]);
+  }, [taskDetails.subtaskStatus, taskDetails]);
   useEffect(() => {
     setCurrentAppStatus(taskDetails.subtaskApprovalStatus);
-  }, [taskDetails.subtaskApprovalStatus]);
+  }, [taskDetails.subtaskApprovalStatus, taskDetails]);
   //   ------------------------------get Request Details-----------------------------
   const fetchRequest = async () => {
     const payload = {

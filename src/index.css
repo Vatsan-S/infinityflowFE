@@ -72,6 +72,18 @@ background-color: var(--clr-accent);
   gap: 8px;
   /* justify-content: center; */
 }
+::-webkit-scrollbar{
+  width: 4px;
+  height: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.1); 
+  border-radius: 10px; 
+  border: 2px solid transparent; 
+}
+::-webkit-scrollbar-track {
+  background: transparent; 
+}
 /* -------------------Login page------------ */
 .page{
   width: 100%;
@@ -278,6 +290,7 @@ background-color: var(--clr-accent);
   width: 320px;
   border-radius: 8px;
   padding: 16px;
+  overflow: auto;
 }
 .paneTitle {
   font-family: var(--ff-roboto);
