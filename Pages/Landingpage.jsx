@@ -1,18 +1,20 @@
 import axios from 'axios';
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-
+import { SphereSpinner } from "react-spinners-kit";
 
 
 const Landingpage = () => {
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
     const [errMessage, setErrMessage] = useState('')
+    const [loginLoading, setLoginLoading] = useState(false)
     const navigate = useNavigate()
 
 
     const handleSubmit = async (e)=>{
             e.preventDefault()
+            setLoginLoading(true)
             const payload = {
                 userName: username,
                 password: password
@@ -25,15 +27,18 @@ const Landingpage = () => {
                 localStorage.setItem('authToken', res.data.token)
                 if(res.data.role==="Team Lead" || res.data.role==="Member"){
                     if(res.data.boxID !== undefined){
+                        setLoginLoading(false)
                         navigate(`/box_details/${res.data.boxID}`)
                     }
                     
                 }else{
+                    setLoginLoading(false)
                     navigate('/box')
                 }
                })
             } catch (error) {
                 console.log(error)
+                setLoginLoading(false)
                 setErrMessage(error.response.data.message)
             }
            
@@ -48,7 +53,18 @@ const Landingpage = () => {
                 <input id='loginInput' className='input loginInput' type="text" value={username} onChange={e=>setUsername(e.target.value)} required/>
                 <input className='input loginInput' type="password" value={password} onChange={e=>setPassword(e.target.value)} required />
                 <p className="errMessage">{errMessage? errMessage:''}</p>
-                <button type='submit' className="submitButton">Login</button>
+                {loginLoading === false ?<><button type='submit' className="submitButton">Login</button></>:<><button
+                    className=" submitButton createSubtask loadingWiText"
+                    type="submit"
+                    disabled={loginLoading}
+                  >
+                    <SphereSpinner
+                      size={15}
+                      color="#C2DEEB"
+                      loading={loginLoading}
+                    />
+                    Loading
+                  </button></>}
                 
             </form>
             </div>
